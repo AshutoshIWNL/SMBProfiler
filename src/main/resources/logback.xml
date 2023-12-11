@@ -1,0 +1,36 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SMBJFILE" class="ch.qos.logback.core.FileAppender">
+        <file>${user.dir}/logs/SMBJ.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="APPFILE" class="ch.qos.logback.core.FileAppender">
+        <file>${user.dir}/logs/SMBProfiler.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.hierynomus.smbj" level="TRACE" additivity="false">
+        <appender-ref ref="SMBJFILE" />
+    </logger>
+
+    <logger name="com.informatica.b2btools.smbp" level="DEBUG" additivity="false">
+        <appender-ref ref="APPFILE" />
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
