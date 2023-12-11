@@ -62,6 +62,15 @@ public class ReportGenerator {
         }
     }
 
+    /**
+     * Creates a bar chart to visualize the average time taken for SMB operations.
+     *
+     * @param avgExists Average time for the 'Exists' operation.
+     * @param avgIsDir  Average time for the 'IsDirectory' operation.
+     * @param avgLength Average time for the 'Length' operation.
+     * @param chartFile File path where the chart will be saved.
+     * @throws IOException If an error occurs while saving the chart.
+     */
     private static void createBarChart(int avgExists, int avgIsDir, int avgLength, String chartFile) throws IOException {
         CategoryDataset dataset = createDataset(avgExists, avgIsDir, avgLength);
         JFreeChart barChart = ChartFactory.createBarChart(
@@ -75,6 +84,15 @@ public class ReportGenerator {
         ChartUtils.saveChartAsPNG(new File(chartFile), barChart, 600, 400);
     }
 
+
+    /**
+     * Creates a dataset for the bar chart based on the average times for SMB operations.
+     *
+     * @param avgExists Average time for the 'Exists' operation.
+     * @param avgIsDir  Average time for the 'IsDirectory' operation.
+     * @param avgLength Average time for the 'Length' operation.
+     * @return CategoryDataset representing the data for the chart.
+     */
     private static CategoryDataset createDataset(int avgExists, int avgIsDir, int avgLength) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         dataset.addValue(avgExists, "Average Time", "Exists");
