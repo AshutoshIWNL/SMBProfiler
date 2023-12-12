@@ -33,7 +33,7 @@ public class ReportGenerator {
             int avgExists = 0;
             int avgIsDir = 0;
             int avgLength = 0;
-            writer.append("\n========================= SMB Operations Report =========================\n\n");
+            writer.append("========================= SMB Operations Report =========================\n\n");
             for(int i = 0; i < smbStats.size(); ++i) {
                 writer.append("[Run ").append(String.valueOf(i+1)).append("]");
                 writer.append("\nExists Call Time Taken: ").append(smbStats.get(i).getExists_call_time_taken()).append("ms");
