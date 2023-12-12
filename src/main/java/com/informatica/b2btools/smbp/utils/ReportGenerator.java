@@ -48,7 +48,7 @@ public class ReportGenerator {
             avgIsDir /= smbStats.size();
             avgLength /= smbStats.size();
 
-            String chartFile = statsFile.substring(0,statsFile.length() - 3) + ".png";
+            String chartFile = statsFile.substring(0,statsFile.length() - 4) + ".png";
             createBarChart(avgExists, avgIsDir, avgLength, chartFile);
 
             writer.append("\n<<Average times>>");
