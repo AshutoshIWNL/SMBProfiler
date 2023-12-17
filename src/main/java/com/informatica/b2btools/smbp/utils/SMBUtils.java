@@ -5,9 +5,11 @@ import com.hierynomus.smbj.auth.AuthenticationContext;
 import com.hierynomus.smbj.connection.Connection;
 import com.hierynomus.smbj.session.Session;
 import com.hierynomus.smbj.share.DiskShare;
+
 import com.informatica.b2btools.smbp.exception.SMBPException;
 import com.informatica.b2btools.smbp.model.SMBConfig;
 import com.informatica.b2btools.smbp.model.SMBStats;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +33,7 @@ public class SMBUtils {
      * @throws SMBPException Thrown if an unexpected SMB exception occurs.
      */
     public static boolean exists(SMBConfig smbConfig, SMBStats smbStats) throws SMBPException {
-        logger.debug("In exists()");
+        logger.debug("ENTRY -> exists()");
         boolean exists = false;
         SMBClient client = new SMBClient();
         long startTime = System.currentTimeMillis();
@@ -62,9 +64,9 @@ public class SMBUtils {
         } finally {
             client.close();
         }
-        logger.debug("Time taken for exits(): " + endTime + " milliseconds");
+        logger.debug("Time taken for exists(): " + endTime + " milliseconds");
         smbStats.setExists_call_time_taken(String.valueOf(endTime));
-        logger.debug("Out exists()");
+        logger.debug("EXIT -> exists()");
         return exists;
     }
 
@@ -76,7 +78,7 @@ public class SMBUtils {
      * @throws SMBPException Thrown if an unexpected SMB exception occurs.
      */
     public static boolean isDirectory(SMBConfig smbConfig, SMBStats smbStats) throws SMBPException {
-        logger.debug("In isDirectory()");
+        logger.debug("ENTRY -> isDirectory()");
         boolean isDirectory = false;
         SMBClient client = new SMBClient();
         long startTime = System.currentTimeMillis();
@@ -97,9 +99,9 @@ public class SMBUtils {
 
                 isDirectory = share.folderExists(smbConfig.getDIR_NAME());
 
-                long existsCheckEndTime = System.currentTimeMillis();
-                logger.debug("Time taken for isDirectory check: " + (existsCheckEndTime - shareConnectEndTime) + " milliseconds");
-                endTime = existsCheckEndTime - startTime;
+                long isDirectoryEndTime = System.currentTimeMillis();
+                logger.debug("Time taken for directory check: " + (isDirectoryEndTime - shareConnectEndTime) + " milliseconds");
+                endTime = isDirectoryEndTime - startTime;
             }
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
@@ -109,7 +111,7 @@ public class SMBUtils {
         }
         logger.debug("Time taken for isDirectory(): " + endTime + " milliseconds");
         smbStats.setIs_directory_call_time_taken(String.valueOf(endTime));
-        logger.debug("Out isDirectory()");
+        logger.debug("EXIT -> isDirectory()");
         return isDirectory;
     }
 
@@ -121,7 +123,7 @@ public class SMBUtils {
      * @throws SMBPException Thrown if an unexpected SMB exception occurs.
      */
     public static long length(SMBConfig smbConfig, SMBStats smbStats) throws SMBPException {
-        logger.debug("In length()");
+        logger.debug("ENTRY -> length()");
         long length = 0L;
         SMBClient client = new SMBClient();
         long startTime = System.currentTimeMillis();
@@ -142,9 +144,9 @@ public class SMBUtils {
 
                 length = share.getFileInformation(smbConfig.getFILE_NAME()).getStandardInformation().getEndOfFile();
 
-                long existsCheckEndTime = System.currentTimeMillis();
-                logger.debug("Time taken for length check: " + (existsCheckEndTime - shareConnectEndTime) + " milliseconds");
-                endTime = existsCheckEndTime - startTime;
+                long lengthCheckEndTime = System.currentTimeMillis();
+                logger.debug("Time taken for length check: " + (lengthCheckEndTime - shareConnectEndTime) + " milliseconds");
+                endTime = lengthCheckEndTime - startTime;
             }
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
@@ -152,9 +154,9 @@ public class SMBUtils {
         } finally {
             client.close();
         }
-        logger.debug("Time taken for exits(): " + endTime + " milliseconds");
+        logger.debug("Time taken for length(): " + endTime + " milliseconds");
         smbStats.setLength_call_time_taken(String.valueOf(endTime));
-        logger.debug("Out length()");
+        logger.debug("EXIT -> length()");
         return length;
     }
 

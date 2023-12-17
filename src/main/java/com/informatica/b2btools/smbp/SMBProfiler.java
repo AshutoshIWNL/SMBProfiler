@@ -30,6 +30,8 @@ public class SMBProfiler {
     private static final Logger logger = LoggerFactory.getLogger(SMBProfiler.class);
     private static final long ITERATIONS = System.getProperty("smbp.iterations") != null ? Long.parseLong(System.getProperty("smbp.iterations")) : 1;
 
+    private static final String VERSION = System.getProperty("smbp.version") != null ? System.getProperty("smbp.version") : "V2_3";
+
     private static final String SMB_SERVER_ADDRESS_KEY = "smb.server_address";
     private static final String SMB_USERNAME_KEY = "smb.username";
     private static final String SMB_PASSWORD_KEY = "smb.password";
@@ -59,14 +61,14 @@ public class SMBProfiler {
         SMBConfig smbConfig = loadSMBProperties(PROPS_FILE);
         logger.debug("SMBConfig object built successfully.\n" + smbConfig);
 
-        logger.info("Starting SMBProfiler");
+        logger.info("Starting SMBProfiler" + VERSION.toUpperCase());
         long startTime = System.currentTimeMillis();
         String statsFile = getFileName();
         List<SMBStats> statsList = new ArrayList<>();
         for (int i = 1; i <= ITERATIONS; i++) {
             SMBStats stats = null;
             try {
-                stats = SMBClientWrapper.profileSMBOperations(smbConfig);
+                stats = SMBClientWrapper.profileSMBOperations(smbConfig, VERSION);
             } catch (SMBPException e) {
                 handleException(e);
             }
