@@ -1,7 +1,7 @@
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -9,7 +9,7 @@
         <file>${user.dir}/logs/SMBJ.log</file>
         <append>true</append>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -17,7 +17,7 @@
         <file>${user.dir}/logs/SMBProfiler.log</file>
         <append>true</append>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
         </encoder>
     </appender>
 

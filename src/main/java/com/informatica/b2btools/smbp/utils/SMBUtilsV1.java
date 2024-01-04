@@ -72,7 +72,7 @@ public class SMBUtilsV1 {
     public static boolean isDirectory(SMBConfig smbConfig, SMBStats smbStats) throws SMBPException {
         logger.debug("ENTRY -> isDirectory()");
         boolean isDirectory = false;
-        String smbFilename = getSMBFileName(smbConfig.getFILE_NAME(), smbConfig.getSERVER_ADDRESS(), smbConfig.getSHARE_NAME());
+        String smbFilename = getSMBFileName(smbConfig.getDIR_NAME(), smbConfig.getSERVER_ADDRESS(), smbConfig.getSHARE_NAME());
         NtlmPasswordAuthentication auth = new NtlmPasswordAuthentication("", smbConfig.getUSERNAME(), smbConfig.getPASSWORD());
         long startTime = System.currentTimeMillis();
         long endTime = 0L;
