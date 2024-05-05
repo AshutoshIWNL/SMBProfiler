@@ -1,9 +1,9 @@
-package com.informatica.b2btools.smbp;
+package com.asm.b2btools.smbp;
 
-import com.informatica.b2btools.smbp.exception.SMBPException;
-import com.informatica.b2btools.smbp.model.SMBConfig;
-import com.informatica.b2btools.smbp.model.SMBStats;
-import com.informatica.b2btools.smbp.utils.ReportGenerator;
+import com.asm.b2btools.smbp.exception.SMBPException;
+import com.asm.b2btools.smbp.model.SMBConfig;
+import com.asm.b2btools.smbp.model.SMBStats;
+import com.asm.b2btools.smbp.utils.ReportGenerator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

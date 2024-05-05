@@ -1,4 +1,4 @@
-package com.informatica.b2btools.smbp.model;
+package com.asm.b2btools.smbp.model;
 
 /**
  * The SMBStats class represents statistics related to SMB operations, including time taken for existence check,

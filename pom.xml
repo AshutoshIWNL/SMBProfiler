@@ -75,7 +75,7 @@
           <appendAssemblyId>false</appendAssemblyId>
           <archive>
             <manifest>
-              <mainClass>com.informatica.b2btools.smbp.SMBProfiler</mainClass>
+              <mainClass>com.asm.b2btools.smbp.SMBProfiler</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

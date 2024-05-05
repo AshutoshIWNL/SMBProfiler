@@ -1,8 +1,8 @@
-package com.informatica.b2btools.smbp.utils;
+package com.asm.b2btools.smbp.utils;
 
-import com.informatica.b2btools.smbp.exception.SMBPException;
-import com.informatica.b2btools.smbp.model.SMBConfig;
-import com.informatica.b2btools.smbp.model.SMBStats;
+import com.asm.b2btools.smbp.exception.SMBPException;
+import com.asm.b2btools.smbp.model.SMBConfig;
+import com.asm.b2btools.smbp.model.SMBStats;
 
 import jcifs.smb.NtlmPasswordAuthentication;
 import jcifs.smb.SmbFile;

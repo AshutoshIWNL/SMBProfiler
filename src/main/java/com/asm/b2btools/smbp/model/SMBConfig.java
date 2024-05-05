@@ -1,4 +1,4 @@
-package com.informatica.b2btools.smbp.model;
+package com.asm.b2btools.smbp.model;
 
 /**
  * The SMBConfig class represents configuration parameters for connecting to an SMB server and performing operations.

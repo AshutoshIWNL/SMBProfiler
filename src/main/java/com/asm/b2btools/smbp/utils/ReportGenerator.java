@@ -1,7 +1,7 @@
-package com.informatica.b2btools.smbp.utils;
+package com.asm.b2btools.smbp.utils;
 
-import com.informatica.b2btools.smbp.exception.SMBPException;
-import com.informatica.b2btools.smbp.model.SMBStats;
+import com.asm.b2btools.smbp.exception.SMBPException;
+import com.asm.b2btools.smbp.model.SMBStats;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;

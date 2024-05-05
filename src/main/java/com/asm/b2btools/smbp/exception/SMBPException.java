@@ -1,4 +1,4 @@
-package com.informatica.b2btools.smbp.exception;
+package com.asm.b2btools.smbp.exception;
 
 /**
  * The SMBPException class represents an exception specific to the SMB Profiler application.
