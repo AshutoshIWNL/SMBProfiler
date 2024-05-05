@@ -25,7 +25,7 @@
         <appender-ref ref="SMBJFILE" />
     </logger>
 
-    <logger name="com.informatica.b2btools.smbp" level="DEBUG" additivity="false">
+    <logger name="com.asm.b2btools.smbp" level="DEBUG" additivity="false">
         <appender-ref ref="APPFILE" />
     </logger>
 
